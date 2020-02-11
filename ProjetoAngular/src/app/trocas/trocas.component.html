@@ -1,0 +1,40 @@
+<div class="row" id="titulo">
+    <div class="col-md-12">
+        <h1>TROCANDO</h1>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="mt-2" id="formulario">
+                <div class="form-group">
+                    <label for="destinatario">Usuário Comuder</label>
+                    <input type="text" class="form-control" id="destinatario"
+                        placeholder="Digite o id de usuário do comuder" [(ngModel)]="troca.destinatario.idUsuario"
+                        (click)="limpaEnviar()" maxlength="3" required>
+                    <span *ngIf='_msgErroD'>{{_msgErroD}}</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="cedido">Quero trocar</label>
+                    <input type="text" class="form-control" id="cedido" placeholder="Digite o código do seu produto"
+                        [(ngModel)]="troca.recebido.idProduto" (click)="limpaEnviar()" maxlength="3" required>
+                    <span *ngIf='_msgErroC'>{{_msgErroC}}</span>
+                </div>
+                <div class="form-group">
+                    <label for="recebido">Quero receber</label>
+                    <input type="text" class="form-control" id="recebido"
+                        placeholder="Digite o código do produto de outro comuder" [(ngModel)]="troca.cedido.idProduto"
+                        (click)="limpaEnviar()" maxlength="3" required>
+                    <span *ngIf='_msgErroRec'>{{_msgErroRec}}</span>
+                </div>
+
+                <button type="submit" class="btn btn-outline mt-2" (click)="validacao()">TROCAR</button>
+                <span id="enviar" *ngIf='_msgEnviar'><strong>{{_msgEnviar}}</strong></span>
+                <span id="troca" *ngIf='_msgTroca'>obs: Mais informções sobre sua troca serão encaminhadas para seu email.</span>
+                <span id="erro" *ngIf='_msgErro'><strong>{{_msgErro}}</strong></span>
+            </div>
+        </div>
+    </div>
+</div>

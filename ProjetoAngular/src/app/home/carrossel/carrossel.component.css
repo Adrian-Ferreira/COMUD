@@ -1,0 +1,18 @@
+h2{
+    text-align: center;
+    margin-top: 4%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    color: #059faa;
+   
+}
+.carousel-inner{
+    height: 70%;
+    width: 70%;
+}
+@media(max-width:1000px){
+    .carousel-inner, h2{
+        display: none;
+
+    }
+}

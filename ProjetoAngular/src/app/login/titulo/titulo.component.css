@@ -1,0 +1,17 @@
+#titulo h1{
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    color:#059faa;
+    
+}
+#titulo{
+    margin-top: 6%;
+    margin-bottom: 1%;
+}
+#titulo p{
+    text-align: center;
+    margin-top: 2%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+

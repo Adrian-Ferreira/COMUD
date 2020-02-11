@@ -1,0 +1,64 @@
+<app-consulta-usuarios></app-consulta-usuarios>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content estilizicao">
+            <div class="modal-header ">
+                <h5 class="modal-title" id="exampleModalLabel">Conhecendo ONG's parceiras</h5>
+                <button type="button" class="close" [routerLink]="'/consultaongs'" data-dismiss="modal"
+                    aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="form-group">
+                        <label for="nome">ID da ONG</label>
+                        <input type="text" class="form-control" id="nome"
+                            placeholder=" Digite o nome da ONG" [(ngModel)]="ong.idONG" maxlength="100" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" id="nome" 
+                            placeholder=" Digite o nome da ONG" [(ngModel)]="ong.nome" maxlength="100" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" 
+                            placeholder=" name@example.com.br" [(ngModel)]="ong.email" maxlength="40" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Telefone">Telefone</label>
+                        <input type="tel" class="form-control" id="tel" 
+                            [(ngModel)]="ong.telefone" placeholder=" (XX) 99999-9999" maxlength="11" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="site">Site</label>
+                        <input type="text" class="form-control" 
+                            placeholder=" Digite o site da ONG" [(ngModel)]="ong.site" maxlength="20" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="endereço">Endereço</label>
+                        <input type="text" class="form-control" [(ngModel)]="ong.endereco"
+                            placeholder=" Digite o endereço da sua ONG" maxlength="150" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descricao">Descrição</label>
+                        <textarea type="text" class="form-control" placeholder="Descreva sua ONG"
+                            [(ngModel)]="ong.descricao" rows="5" maxlength="400" disabled>
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn " (click)="encerrar()" data-dismiss="modal">Encerrar
+                    Consulta</button>
+            </div>
+        </div>
+    </div>
+</div>

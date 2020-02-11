@@ -1,0 +1,97 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content estilizicao">
+            <div class="modal-header ">
+                <h5 class="modal-title" id="exampleModalLabel">Alteração de Produto</h5>
+                <button type="button" class="close" [routerLink]="'/produto'" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="form-group">
+                        <label for="nome">Produto</label>
+                        <input type="text" class="form-control" id="produ" (click)="limpaEnviar()"
+                            placeholder="Digite o produto" [(ngModel)]="produto.nome" maxlength="50" required>
+                        <span *ngIf='_msgErroN'>{{_msgErroN}}</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="nome">Foto</label>
+                        <input type="text" class="form-control" id="prod" (click)="limpaEnviar()"
+                            placeholder="Coloque o link das imagens do produto" [(ngModel)]="produto.linkFoto" required>
+                        <span *ngIf='_msgErroF'>{{_msgErroF}}</span>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-2 mr-5">
+                            <select class="btn" id="tam" [(ngModel)]="produto.tamanho">
+                                <option value="Selecione">Selecione o tamanho</option>
+                                <option value="PP">PP</option>
+                                <option value="P">P</option>
+                                <option value="M">M</option>
+                                <option value="G">G</option>
+                                <option value="GG">GG</option>
+                                <option value="GG">XG</option>
+                                <option value="GG">XXG</option>
+                                <option value="GG">XXXG</option>
+                                <option value="unico">ÚNICO</option>
+                            </select>
+                            <span *ngIf='_msgErroT'>{{_msgErroT}}</span>
+                        </div>
+                        <div class="col-md-2 mr-4">
+                            <select class="btn " id="sel" [(ngModel)]="produto.condicao">
+                                <option value="Selecione">Selecione a condição</option>
+                                <option value="NOVO">NOVO</option>
+                                <option value="SEMI-NOVO">SEMI-NOVO</option>
+                                <option value="USADO">USADO</option>
+                            </select>
+                            <span *ngIf='_msgErroCO'>{{_msgErroCO}}</span>
+                        </div>
+                        <div class="col-md-2 ml-4 mr-3">
+                            <select class="btn " id="sel" [(ngModel)]="produto.classificacao">
+                                <option value="Selecione">Selecione a classificação</option>
+                                <option value="INFANTIL">INFANTIL</option>
+                                <option value="ADULTO">ADULTO</option>
+                            </select>
+                            <span *ngIf='_msgErroCL'>{{_msgErroCL}}</span>
+                        </div>
+                        <div class="col-md-2" id="cat">
+                            <select class="btn" id="sel" [(ngModel)]="produto.categoria">
+                                <option value="Selecione">Selecione a categoria</option>
+                                <option value="CALÇA">CALÇA</option>
+                                <option value="MOLETOM">MOLETOM</option>
+                                <option value="VESTIDO">VESTIDO</option>
+                                <option value="BLUSA">BLUSA</option>
+                                <option value="CROPPED">CROPPED</option>
+                                <option value="CASACO">CASACO</option>
+                                <option value="CAMISA">CAMISA</option>
+                                <option value="PIJAMA">PIJAMA</option>
+                                <option value="SAIA">SAIA</option>
+                                <option value="BERMUDA">BERMUDA</option>
+                                <option value="SHORT">SHORT</option>
+                                <option value="SUETER">SUETER</option>
+                                <option value="JAQUETA">JAQUETA</option>
+                                <option value="MACACÃO">MACACÃO</option>
+                                <option value="POLO">POLO</option>
+                                <option value="JARDINEIRA">JARDINEIRA</option>
+                            </select>
+                            <span *ngIf='_msgErroCA'>{{_msgErroCA}}</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">Detalhes</label>
+                        <textarea class="form-control" (click)="limpaEnviar()"
+                            placeholder="Digite os detalhes e/ou observações do produto..."
+                            [(ngModel)]="produto.detalhes" id="mensagem" rows="5" maxlength="200" required></textarea>
+                    </div>
+                    <span *ngIf='_msgErroD'>{{_msgErroD}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-outline mt-2" (click)="validacao()">Enviar Alteração</button>
+            <span id="enviar" *ngIf='_msgEnviar'><strong>{{_msgEnviar}}</strong></span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<span id="erro" class="mb-1 text-center" *ngIf='_msgEnviarE'><strong>{{_msgEnviarE}}</strong></span>
+<span id="log" class="mb-1 text-center" *ngIf='_msgLogout'><strong>{{_msgLogout}}</strong></span>
+<br>
+<div class="col">
+    <div class="form-group">
+        <label for="nome">Email</label>
+        <input type="email" class="form-control" id="emaillogin" (click)="limpaEnviar()" placeholder=" Digite seu email"
+            [(ngModel)]="usuario.email" maxlength="50" required>
+    </div>
+
+    <div class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" class="form-control mb-2" id="senhalogin" (click)="limpaEnviar()"
+            placeholder=" Digite sua senha" [(ngModel)]="usuario.senha" maxlength="20" required>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-outline menor" (click)="autenticacao()">Login</button>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5 linha">
+            <hr>
+        </div>
+        <div class="col-md-2 texto">
+            <p>ou</p>
+        </div>
+        <div class="col-md-5 linha">
+            <hr>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="cadastro">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 mt-3">
+                <button type="submit" class="btn btn-outline maior" data-toggle="modal"
+                    data-target="#exampleModal">Cadastre-se</button>
+                <app-modal-cad></app-modal-cad>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <p style="text-align: center">Ao me cadastrar, concordo com todos
+            <br> os termos de serviço e políticas de privacidade da COMUD.</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5 linha">
+            <hr>
+        </div>
+        <div class="col-md-2 texto">
+            <p>Quer ser uma ONG parceira?</p>
+        </div>
+        <div class="col-md-5 linha">
+            <hr>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="cadastro">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 mt-3">
+                <button type="submit" class="btn btn-outline maior" data-toggle="modal" data-target="#exampleModal"
+                    [routerLink]="'/cadastroong'">Cadastre sua ONG</button>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+    </div>

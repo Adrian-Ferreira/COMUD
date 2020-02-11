@@ -1,0 +1,46 @@
+<div class="container" id="formulario">
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" id="nome" placeholder=" Digite seu nome" [(ngModel)]="faq.nome"
+            maxlength="30" required>
+        <span *ngIf='_msgErroN'>{{_msgErroN}}</span>
+    </div>
+    <div class="form-group">
+        <label for="Sobrenome">Sobrenome</label>
+        <input type="text" class="form-control" id="sobrenome" placeholder=" Digite seu sobrenome"
+            [(ngModel)]="faq.sobrenome" maxlength="50" required>
+        <span *ngIf='_msgErroS'>{{_msgErroS}}</span>
+    </div>
+    <div class="form-group">
+        <label for="Telefone">Telefone</label>
+        <input type="tel" class="form-control" id="tel" [(ngModel)]="faq.telefone" placeholder=" (XX) 99999-9999"
+            maxlength="11" required>
+        <span *ngIf='_msgErroT'>{{_msgErroT}}</span>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder=" nome@examplo.com.br" [(ngModel)]="faq.email"
+            maxlength="40" required>
+        <span *ngIf='_msgErroE'>{{_msgErroE}}</span>
+    </div>
+
+    <select class="btn" id="slct" [(ngModel)]="faq.assunto">
+        <option value="Selecione">Selecione um assunto</option>
+        <option value="Parceiro">Como ser parceiro</option>
+        <option value="Denuncia">Fazer uma denúncia</option>
+        <option value="ong">Sobre ONGs</option>
+        <option value="Suporte">Receber suporte</option>
+        <option value="Feedback">Feedback</option>
+        <option value="Outro">Outro assunto</option>
+    </select>
+    <span *ngIf='_msgErroSe'>{{_msgErroSe}}</span>
+
+    <div class="form-group">
+        <label for="mensagem">Mensagem</label>
+        <textarea class="form-control" [(ngModel)]="faq.mensagem" id="mensagem" rows="5" maxlength="500"
+            required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-outline mt-2 mb-2" (click)="validacao()">Enviar</button>
+    <span id="enviar" *ngIf='_msgEnviar'><strong>{{_msgEnviar}}</strong></span>
+</div>

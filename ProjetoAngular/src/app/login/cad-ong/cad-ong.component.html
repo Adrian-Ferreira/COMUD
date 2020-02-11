@@ -1,0 +1,65 @@
+<app-consulta-usuarios></app-consulta-usuarios>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content estilizicao">
+            <div class="modal-header ">
+                <h5 class="modal-title" id="exampleModalLabel">Cadastre sua ONG</h5>
+                <button type="button" class="close" data-dismiss="modal" [routerLink]="'/consultaongs'" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" id="nome" (click)="limpaEnviar()"
+                            placeholder=" Digite o nome da ONG" [(ngModel)]="ong.nome" maxlength="100" required>
+                        <span *ngIf='_msgErroN'>{{_msgErroN}}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" (click)="limpaEnviar()"
+                            placeholder=" name@example.com.br" [(ngModel)]="ong.email" maxlength="40" required>
+                        <span *ngIf='_msgErroE'>{{_msgErroE}}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Telefone">Telefone</label>
+                        <input type="tel" class="form-control" id="tel" (click)="limpaEnviar()"
+                            [(ngModel)]="ong.telefone" placeholder=" (XX) 99999-9999" maxlength="11" required>
+                        <span *ngIf='_msgErroT'>{{_msgErroT}}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="site">Site</label>
+                        <input type="text" class="form-control" (click)="limpaEnviar()"
+                            placeholder=" Digite o site da ONG" [(ngModel)]="ong.site" maxlength="200" required>
+                        <span *ngIf='_msgErroS'>{{_msgErroS}}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="endereço">Endereço</label>
+                        <input type="text" class="form-control" [(ngModel)]="ong.endereco"
+                            placeholder=" Digite o endereço da sua ONG" maxlength="150" required>
+                        <span *ngIf='_msgErroEn'>{{_msgErroEn}}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descricao">Descrição</label>
+                        <textarea type="text" class="form-control" placeholder="Descreva sua ONG"
+                            [(ngModel)]="ong.descricao" rows="5" maxlength="400" required>
+                        </textarea>
+                    </div>
+                    <span *ngIf='_msgErroD'>{{_msgErroD}}</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <span *ngIf='_msgEnviar'><strong>{{_msgEnviar}}</strong></span>
+                <span id="erro" *ngIf='_msgEnviarE'><strong>{{_msgEnviarE}}</strong></span>
+                <button type="submit" class="btn btn" data-dismiss="modal" (click)="validacao()">Enviar</button>
+            </div>
+        </div>
+    </div>
+</div>

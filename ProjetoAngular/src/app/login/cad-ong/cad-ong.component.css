@@ -1,0 +1,45 @@
+.estilizicao{
+    border:none;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.219);
+    border-radius:20px 20px 20px 20px;
+}
+.modal-header{
+    border-radius:15px 15px 0px 0px;
+    background-color: #059faa;
+    color:#dedcc5;
+    text-align: center;
+}
+.modal-footer{
+    border-radius:0px 0px 15px 15px;
+    background-color: #059faa;
+    color:#dedcc5;
+}
+.modal-footer .btn{
+    background-color: #dedcc5;
+    color:#059faa;
+}
+label{
+    font-family: 'Mukta', sans-serif;
+    font-size:14px;
+    color:rgb(167, 167, 167);
+    margin-bottom: 0%;
+    margin-top:2%;
+}
+textarea{
+    resize: none;
+}
+.modal-body span{
+    font-size:12px;
+    color:red;
+}
+.modal-footer span{
+    font-size:20px;
+    color:#e7e4bf;
+    margin-right: 10%;
+}
+
+#erro{
+    font-size:20px;
+    margin-right: 18%;
+    color:red;
+}

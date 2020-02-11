@@ -1,0 +1,60 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.row{
+    margin-left: 4.5%;
+    margin-right: 4.5%;
+}
+#titulo h1{
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    color:#059faa;
+}
+#titulo{
+    margin-top: 5%;
+    margin-bottom: 3%;
+    margin-left: 3%;
+    margin-right: 5%;
+}
+#colN{
+    margin-left: 7%;
+}
+.btn{
+    margin-top:3%;
+    width: 60px;
+    background-color: #059faa;
+    color:#dedcc5;
+    margin-left: 43%;
+  
+}
+.btn-outline{
+    width: 80px;
+    height: 35px;
+    color:#dedcc5;
+    border-color:#dedcc5;
+}
+.btn-outline:hover{
+    color:#059faa;
+    background-color: #dedcc5;
+    border-color:#dedcc5;
+}
+.div{
+    margin: auto;
+}
+a{
+    text-decoration: none;
+    
+}
+#cadastro{
+    margin-top:2%;
+    margin-left: -5.5%;
+}
+#cadastro .btn{
+    width: 300px;
+    background-color: #059faa;
+    color:#dedcc5;
+    margin-bottom: 2%;
+    
+}

@@ -1,0 +1,51 @@
+<div class="row" id="titulo">
+    <div class="col-md-12">
+        <h1>Alterando seu Cadastro</h1>
+    </div>
+</div>
+<div class="container" id="formulario">
+    <div class="form-group">
+        <label for="nome">Nome Completo</label>
+        <input type="text" class="form-control" id="nome" (click)=limpaEnviar() placeholder=" Digite o nome completo"
+            [(ngModel)]="usuario.nome" maxlength="50" required>
+        <span *ngIf='_msgErroN'>{{_msgErroN}}</span>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" (click)=limpaEnviar() placeholder=" name@example.com.br"
+            [(ngModel)]="usuario.email" maxlength="40" required>
+        <span *ngIf='_msgErroE'>{{_msgErroE}}</span>
+    </div>
+
+    <div class="form-group">
+        <label for="Telefone">Telefone</label>
+        <input type="tel" class="form-control" id="tel" (click)=limpaEnviar() [(ngModel)]="usuario.telefone"
+            placeholder=" (XX) 99999-9999" maxlength="11" required>
+        <span *ngIf='_msgErroT'>{{_msgErroT}}</span>
+    </div>
+
+    <div class="form-group">
+        <label for="endereço">Endereço</label>
+        <input type="text" class="form-control" [(ngModel)]="usuario.endereco" placeholder=" Digite seu endereço"
+            maxlength="150" required>
+    </div>
+
+    <div class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" class="form-control" id="senha" (click)=limpaEnviar() placeholder=" Digite a senha"
+            [(ngModel)]="usuario.senha" maxlength="20" required>
+        <span *ngIf='_msgErroS'>{{_msgErroS}}</span>
+        <span id="fraca" *ngIf='_msgErroSFA'><strong>{{_msgErroSFA}}</strong></span>
+        <span id="forte" *ngIf='_msgErroSFO'><strong>{{_msgErroSFO}}</strong></span>
+    </div>
+    <div class="form-group">
+        <label for="ConfirmarSenha">Confirmar Senha</label>
+        <input type="password" class="form-control" id="ConfSenha" (click)="vSenha()" [(ngModel)]="usuario.confSenha"
+            placeholder=" Confirme a senha" maxlength="20" required>
+        <span *ngIf='_msgErroCS'>{{_msgErroCS}}</span>
+    </div>
+    <span id="enviar" *ngIf='_msgEnviar'><strong>{{_msgEnviar}}</strong></span>
+    <span id="erro" *ngIf='_msgEnviarE'><strong>{{_msgEnviarE}}</strong></span>
+    <button type="submit" class="btn btn" (click)="validacao()">Alterar</button>
+</div>

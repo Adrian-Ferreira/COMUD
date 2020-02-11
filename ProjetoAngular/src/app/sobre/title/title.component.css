@@ -1,0 +1,31 @@
+*{
+    margin:0%;
+    padding:0%;
+}
+#TextoPrincipal h1{
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    color:#059faa;
+}
+.sobrecomud{
+    justify-content: center;
+    text-align: justify;
+    margin-top: 5%;
+}
+#TextoPrincipal h3,#TituloSobre h3{
+    text-align: center;
+}
+#TextoPrincipal p{
+    margin-top:5%;
+    font-size:16px;
+    font-family: 'Ubuntu', sans-serif;
+}
+p{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+h1{
+    margin-left: 2%;
+    margin-right: 2%;
+}

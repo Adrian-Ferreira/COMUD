@@ -1,0 +1,28 @@
+<div class="row" id="titulo">
+    <div class="col-md-12">
+        <h1>ONG's parceiras do COMUD</h1>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-md-12">
+        <div *ngFor='let ong of listaOng'>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-2 div" id="colN">
+                    <a class="text-muted">{{ ong.nome }} </a>
+                </div>
+                <div class="col-md-3 div ">
+                    <button class="btn btn-outline " data-toggle="modal" data-target="#exampleModal"
+                        [routerLink]="['/consultaong',ong.idONG]"> Conhecer </button>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" id="cadastro">
+    <div class="col-md-12 mt-3">
+        <button type="submit" class="btn btn-outline maior" data-toggle="modal" data-target="#exampleModal"
+            [routerLink]="'/cadastroong'">Cadastre sua ONG</button>
+    </div>
+</div>

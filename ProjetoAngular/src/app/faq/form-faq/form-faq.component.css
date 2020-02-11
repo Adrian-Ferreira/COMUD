@@ -1,0 +1,45 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+a{
+    text-decoration: none;
+    color: #dedcc5;
+    font-weight: lighter;
+}
+h1{ 
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    color:#059faa;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+}
+h5{ 
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    color:#059faa;
+}
+p{
+    text-align: center;
+}
+.row{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.btn{
+    background-color: #059faa;
+    color:#dedcc5;
+}
+.btn-outline{
+    width: 120px;
+    height: 50px;
+    color:#dedcc5;
+    border-color:#dedcc5;
+}
+.btn-outline:hover{
+    color:#059faa;
+    background-color: #dedcc5;
+    border-color:#dedcc5;
+}

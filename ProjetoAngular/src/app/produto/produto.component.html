@@ -1,0 +1,115 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 p-4 mt-2 d-flex justify-content-end">
+      <div class="input-group ">
+        <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2"
+          placeholder=" O que deseja pesquisar?" [(ngModel)]="palavraChave">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary " type="button" id="button-addon2" (click)="pesquisar();">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="lista == true">
+  <div class="row teste">
+
+
+
+    <div class="col-md-3 col-sm-6 d-flex justify-content-center" *ngFor="let busca of idproduto">
+      <div class="product-grid6">
+        <div class="product-image6">
+          <img class="pic-1" src="{{busca.linkFoto}}">
+        </div>
+        <ul class="social ">
+          <li><a data-toggle="modal" data-target=".bd-example-modal-lg" (click)="atribuiModal(busca.idProduto);"
+              data-tip="Veja melhor"><i class="fa fa-search"></i></a></li>
+          <li><a [routerLink]="'/cestadedoacao'" data-tip="Doar"><i class="fa fa-gift"></i></a></li>
+          <li><a [routerLink]="'/cestadetrocas'" data-tip="Trocar"><i class="fa fa-handshake-o "></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Estrura modal-->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row imagemProd">
+          <div class="col-md-7 pr-2">
+            <img class="img-fluid" src="{{prodModal.linkFoto }}">
+          </div>
+          <div class="col-md-5 pl-1">
+
+
+            <div class="row mb-3 infoUser">
+              <div class="col-md-12 ">
+                <h3>{{prodModal.nome}}</h3>
+                <p><strong>{{prodModal.status}}</strong></p>
+                <p>ID do Produto: {{prodModal.idProduto }}</p>
+                <p>ID do Proprietário: {{prodModal.usuario.idUsuario }}</p>
+                <p>Proprietário: {{prodModal.usuario.nome }}</p>
+
+              </div>
+              <div class="row mt-3 detalhesUser">
+                <div class="col-md-12">
+                  <p>Informações adicionais: {{prodModal.detalhes }}</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row  estilizaModal">
+              <div class="col-md-2 mr-2">
+                <p>Tamanho: &nbsp;{{prodModal.tamanho}} </p>
+              </div>
+              <div class="col-md-3 ">
+                <p>Condição: &nbsp;&nbsp;{{prodModal.condicao}} </p>
+              </div>
+              <div class="col-md-3 ">
+                <p>Classificação: {{prodModal.classificacao}} </p>
+              </div>
+              <div class="col-md-3">
+                <p>Categoria: {{prodModal.categoria}} </p>
+              </div>
+            </div>
+
+
+            <div class="row mt-5">
+              <div class="col-md-6">
+                <button type="button" id="btnDoarMod"[routerLink]="'/cestadedoacao'" class="btn  mt-auto p-2"
+                  data-dismiss="modal">Doar</button>
+              </div>
+              <div class="col-md-6">
+                <button type="button" [routerLink]="'/cestadetrocas'" class="btn  mt-auto p-2"
+                  data-dismiss="modal">Trocar</button>
+              </div>
+            </div>
+
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Fim estrutura modal-->
